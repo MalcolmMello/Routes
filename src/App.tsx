@@ -1,11 +1,4 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom'
-import { Home } from './pages/Home'
-import { About } from './pages/About';
-import './App.css';
-import { NotFound } from './pages/NotFound';
-import { AboutItem } from './pages/AboutItem';
-import { RequireAuth } from './RequireAuth';
+import { RouteList } from "./routes/RouteList";
 
 const App = () => {
 	return (
@@ -15,16 +8,7 @@ const App = () => {
 			<hr/>
 			
 			<div>
-				<Routes>
-					<Route path="/" element={<Home />}/>
-					<Route path="/sobre" element={ 
-						<RequireAuth>
-							<About/>
-						</RequireAuth> } 
-					/>
-					<Route path="/sobre/:slug" element={ <AboutItem/> }/>
-					<Route path="*" element={ <NotFound /> }/>
-				</Routes>
+				<RouteList />
 			</div>
 
 			<hr />
